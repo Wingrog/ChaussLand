@@ -3,8 +3,12 @@
 
   <form #chaussureForm="ngForm" (ngSubmit)="submitChaussure()">
 
+    <!-- EN UTILISANT UN INPUT TEXT -->
+
     <label for="nom">Renseigner le nom de la chaussure</label>
     <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="chaussure.nom" #nom="ngModel">
+
+    <!-- EN UTILISANT DES INPUTS RADIO -->
 
     <label for="id">Renseigner une marque</label>
     <div>
@@ -24,16 +28,22 @@
       <label for="puma">Puma</label>
     </div>
 
+    <!-- EN UTILISANT UN INPUT NUMBER -->
 
     <label for="nom">Renseigner une taille</label>
     <input type="number" class="form-control" name="taille" id="taille" required [(ngModel)]="chaussure.taille"
       #taille="ngModel">
+
+
+    <!-- EN UTILISANT UN SELECT -->
 
     <div>
       <label for="type">Type de chaussure</label>
       <select class="form-control" id="type" required [(ngModel)]="chaussure.type" name="type" #terrain="ngModel">
         <option *ngFor="let item of typeChaussure" [value]="item">{{item}}</option>
       </select>
+
+      <!-- ON AFFICHE UNE DIV POUR DIRE QUE LE CHOIX EST OBLIGATOIRE -->
       <div [hidden]="terrain.valid" class="alert alert-danger">
         Le type de chaussure est requis
       </div>
