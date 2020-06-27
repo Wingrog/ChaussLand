@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChaussureService } from 'src/app/services/chaussure.service';
+import { Chaussure } from 'src/app/models/chaussure';
 
 @Component({
   selector: 'app-chaussure',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChaussureComponent implements OnInit {
 
-  constructor() { }
+  chaussures: Chaussure[];
+  isLoading: boolean;
+
+
+  constructor(private chaussureService: ChaussureService) { }
 
   ngOnInit(): void {
-  }
 
+    //Methode GET Back End pour récupérer toutes les chaussures
+
+    this.isLoading = true;
+    this.chaussureService.getChaussures().subscribe((data: Chaussure[]) => {
+      this.chaussures = data;
+      this.isLoading = false;
+    });
+
+    console.log("Ici je demande mes données");
+    this.chaussureService.getChaussures().subscribe(data => {
+      this.chaussures = data;
+      console.log("C'est ok, je récupère les données !");
+    })
+  }
 }

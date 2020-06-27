@@ -9,6 +9,10 @@ import { AddChaussureComponent } from './components/add-chaussure/add-chaussure.
 import { EditChaussureComponent } from './components/edit-chaussure/edit-chaussure.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { FormsModule } from '@angular/forms'; //pour utiliser les formulaires;
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications avec le ToastrModule
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { MenuComponent } from './components/menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule, //pour utiliser les formulaires
+    ToastrModule.forRoot(), //pour utiliser les notifications
+    HttpClientModule, //pour le back end
   ],
   providers: [],
   bootstrap: [AppComponent]
