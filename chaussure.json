@@ -1,10 +1,28 @@
 {
-  "chaussure": [{
-    "id": 1,
-    "nom": "f50",
-    "marque": "Adidas",
-    "type": "Football",
-    "taille": 43,
-    "dateEntreStock": "2012-04-23T18:25:43.511Z"
-  }]
+  "chaussure": [
+    {
+      "id": 1,
+      "nom": "f50",
+      "marque": "Adidas",
+      "type": "Football",
+      "taille": 43,
+      "dateEntreStock": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "id": 2,
+      "nom": "test",
+      "marque": "nike",
+      "type": "Sport",
+      "taille": 44,
+      "dateEntreStock": "2020-06-12"
+    },
+    {
+      "id": 3,
+      "nom": "popo",
+      "marque": "nike",
+      "type": "Ville",
+      "taille": 30,
+      "dateEntreStock": "2020-06-17"
+    }
+  ]
 }

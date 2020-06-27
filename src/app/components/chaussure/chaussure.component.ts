@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChaussureService } from 'src/app/services/chaussure.service';
 import { Chaussure } from 'src/app/models/chaussure';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-chaussure',
@@ -13,7 +14,7 @@ export class ChaussureComponent implements OnInit {
   isLoading: boolean;
 
 
-  constructor(private chaussureService: ChaussureService) { }
+  constructor(private chaussureService: ChaussureService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -31,4 +32,21 @@ export class ChaussureComponent implements OnInit {
       console.log("C'est ok, je récupère les données !");
     })
   }
+
+
+  deleteChaussure(id: number): void {
+    this.isLoading = true;
+    this.chaussureService.deleteChaussure(id).subscribe(then => {
+      this.chaussureService.getChaussures().subscribe((data: Chaussure[]) => {
+        this.chaussures = data;
+        this.isLoading = false;
+        this.toastr.error("La chaussure à été supprimée !"); //on affiche la notification
+      });
+    })
+  }
+
+
+
+
+
 }

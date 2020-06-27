@@ -11,7 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FormsModule } from '@angular/forms'; //pour utiliser les formulaires;
 import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications avec le ToastrModule
+import { ToastrModule } from 'ngx-toastr';
+import { ChaussureDetailComponent } from './components/chaussure-detail/chaussure-detail.component'; //pour utiliser les notifications avec le ToastrModule
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications ave
     EditChaussureComponent,
     HomeComponent,
     MenuComponent,
+    ChaussureDetailComponent,
   ],
   imports: [
     BrowserModule,

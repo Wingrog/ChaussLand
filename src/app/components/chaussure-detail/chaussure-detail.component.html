@@ -1,0 +1,12 @@
+<div *ngIf="!isloading">
+  <h1>Id de la chaussure : {{chaussure.id}}</h1>
+  <h2>Nom de la chaussure : {{chaussure.nom}}</h2>
+  <h2>Marque : {{chaussure.marque}}</h2>
+  <h2>Type : {{chaussure.type}}</h2>
+  <h2>Taille : {{chaussure.taille}}</h2>
+  <h2>Date d'entrée en stock {{chaussure.dateEntreStock}}</h2>
+</div>
+
+
+<div *ngIf="isloading">
+  <p>Chargement des données....</p>

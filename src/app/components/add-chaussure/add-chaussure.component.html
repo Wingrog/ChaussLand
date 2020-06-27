@@ -1,1 +1,56 @@
-<p>add-chaussure works!</p>
+<div *ngIf="!isLoading">
+  <h1>Ajouter une planète</h1>
+
+  <form #chaussureForm="ngForm" (ngSubmit)="submitChaussure()">
+
+    <label for="nom">Renseigner le nom de la chaussure</label>
+    <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="chaussure.nom" #nom="ngModel">
+
+    <label for="id">Renseigner une marque</label>
+    <div>
+      <input type="radio" id="adidas" name="marque" value="adidas" required [(ngModel)]="chaussure.marque"
+        #marque="ngModel">
+      <label for="adidas">Adidas</label>
+    </div>
+    <div>
+      <input type="radio" id="nike" name="marque" value="nike" required [(ngModel)]="chaussure.marque"
+        #marque="ngModel">
+      <label for="nike">Nike</label>
+    </div>
+
+    <div>
+      <input type="radio" id="puma" name="marque" value="puma" required [(ngModel)]="chaussure.marque"
+        #marque="ngModel">
+      <label for="puma">Puma</label>
+    </div>
+
+
+    <label for="nom">Renseigner une taille</label>
+    <input type="number" class="form-control" name="taille" id="taille" required [(ngModel)]="chaussure.taille"
+      #taille="ngModel">
+
+    <div>
+      <label for="type">Type de chaussure</label>
+      <select class="form-control" id="type" required [(ngModel)]="chaussure.type" name="type" #terrain="ngModel">
+        <option *ngFor="let item of typeChaussure" [value]="item">{{item}}</option>
+      </select>
+      <div [hidden]="terrain.valid" class="alert alert-danger">
+        Le type de chaussure est requis
+      </div>
+      <div>
+        <label for="id">Renseigner une date d'entrée</label><br>
+        <input type="date" name="dateEntree" id="dateEntree" required [(ngModel)]="chaussure.dateEntreStock"
+          #dateEntreStock="ngModel">
+      </div><br>
+      <div>
+        <input [disabled]="!chaussureForm.valid" type="submit" value="Envoyer">
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<div *ngIf="isLoading">
+  <p>Traitement des données....</p>
+</div>

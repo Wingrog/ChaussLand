@@ -1,6 +1,6 @@
 <h4>Total de chaussures enregistrées : {{chaussures.length}}</h4>
 
-<!-- <a class="btn btn-danger" routerLink="/planets/add">Ajouter une planete</a> -->
+<a class="btn btn-danger" routerLink="/chaussure/add">Ajouter une chaussure</a>
 
 <table class="table table-dark">
   <thead>
@@ -13,19 +13,18 @@
   </thead>
   <tbody>
 
-    <tr *ngFor="let item of this.chaussures">
-      <td>{{ item.id }}</td>
-      <td>{{ item.nom }}</td>
-      <td>{{ item.marque }}</td>
-      <td>{{ item.type }}</td>
-      <td>{{item.taille}}</td>
-      <td>{{item.dateEntreStock}}</td>
-      <td></td>
+    <tr *ngFor="let chaussure of this.chaussures">
+      <td>{{ chaussure.id }}</td>
+      <td>{{ chaussure.nom }}</td>
+      <td>{{ chaussure.marque }}</td>
+      <td>{{ chaussure.type }}</td>
+      <td>{{chaussure.taille}}</td>
+      <td>{{chaussure.dateEntreStock | date: 'dd/MM/yyyy'}}</td>
 
-      <!-- <td><a class="btn btn-warning" [routerLink]="['/planets', chaussures.id]">En savoir plus</a></td> -->
-      <!-- <td><a class="btn btn-primary" [routerLink]="['/planets/update', chaussures.id]">Editer</a></td> -->
+      <td><a class="btn btn-warning" [routerLink]="['/chaussure', chaussure.id]">En savoir plus</a></td>
+      <td><a class="btn btn-primary" [routerLink]="['/chaussure/update', chaussure.id]">Editer</a></td>
 
-      <!-- <td> <a class="btn btn-danger" (click)="deletePlanet(planet.id)">Supprimer</a></td> -->
+      <td> <a class="btn btn-danger" (click)="deleteChaussure(chaussure.id)">Supprimer</a></td>
     </tr>
   </tbody>
 </table>
