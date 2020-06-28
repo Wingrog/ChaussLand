@@ -9,10 +9,10 @@ import { AddChaussureComponent } from './components/add-chaussure/add-chaussure.
 import { EditChaussureComponent } from './components/edit-chaussure/edit-chaussure.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ChaussureDetailComponent } from './components/chaussure-detail/chaussure-detail.component';
+import { HttpClientModule } from '@angular/common/http'; //pour se connecter au json
 import { FormsModule } from '@angular/forms'; //pour utiliser les formulaires;
-import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr';
-import { ChaussureDetailComponent } from './components/chaussure-detail/chaussure-detail.component'; //pour utiliser les notifications avec le ToastrModule
+import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications avec le ToastrModule
 
 
 @NgModule({
