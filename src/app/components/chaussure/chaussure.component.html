@@ -1,32 +1,38 @@
-<h4>Total de chaussures enregistrées : {{chaussures.length}}</h4>
+<div *ngIf="!isLoading">
 
-<button class="btn btn-danger" routerLink="/chaussure/add">Ajouter une chaussure</button>
+  <h4>Total de chaussures enregistrées : {{chaussures.length}}</h4>
 
-<table class="table table-dark">
-  <thead>
-    <th>ID</th>
-    <th>Nom</th>
-    <th>Marque</th>
-    <th>Type</th>
-    <th>Taille</th>
-    <th>Date entree en stock</th>
-    <th>Détail</th>
-    <th>Editer</th>
-    <th>Supprimer</th>
-  </thead>
-  <tbody>
+  <button class="btn btn-danger" routerLink="/chaussure/add">Ajouter une chaussure</button>
 
-    <tr *ngFor="let chaussure of this.chaussures">
-      <td>{{ chaussure.id }}</td>
-      <td>{{ chaussure.nom }}</td>
-      <td>{{ chaussure.marque }}</td>
-      <td>{{ chaussure.type }}</td>
-      <td>{{chaussure.taille}}</td>
-      <td>{{chaussure.dateEntreStock | date: 'dd/MM/yyyy'}}</td>
+  <table class="table table-dark">
+    <thead>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Marque</th>
+      <th>Type</th>
+      <th>Taille</th>
+      <th>Date entree en stock</th>
+      <th>Détail</th>
+      <th>Editer</th>
+      <th>Supprimer</th>
+    </thead>
+    <tbody>
 
-      <td><button class="btn btn-warning" [routerLink]="['/chaussure', chaussure.id]">En savoir plus</button></td>
-      <td><button class="btn btn-primary" [routerLink]="['/chaussure/update', chaussure.id]">Editer</button></td>
-      <td> <button class="btn btn-danger" (click)="deleteChaussure(chaussure.id)">Supprimer</button></td>
-    </tr>
-  </tbody>
-</table>
+      <tr *ngFor="let chaussure of this.chaussures">
+        <td>{{ chaussure.id }}</td>
+        <td>{{ chaussure.nom }}</td>
+        <td>{{ chaussure.marque }}</td>
+        <td>{{ chaussure.type }}</td>
+        <td>{{chaussure.taille}}</td>
+        <td>{{chaussure.dateEntreStock | date: 'dd/MM/yyyy'}}</td>
+
+        <td><button class="btn btn-warning" [routerLink]="['/chaussure', chaussure.id]">En savoir plus</button></td>
+        <td><button class="btn btn-primary" [routerLink]="['/chaussure/update', chaussure.id]">Editer</button></td>
+        <td> <button class="btn btn-danger" (click)="deleteChaussure(chaussure.id)">Supprimer</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="isLoading">
+  <p>Traitement des données....</p>
+</div>
