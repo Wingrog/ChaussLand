@@ -10,6 +10,9 @@
     <th>Type</th>
     <th>Taille</th>
     <th>Date entree en stock</th>
+    <th>Détail</th>
+    <th>Editer</th>
+    <th>Supprimer</th>
   </thead>
   <tbody>
 
@@ -23,8 +26,7 @@
 
       <td><a class="btn btn-warning" [routerLink]="['/chaussure', chaussure.id]">En savoir plus</a></td>
       <td><a class="btn btn-primary" [routerLink]="['/chaussure/update', chaussure.id]">Editer</a></td>
-
-      <td> <a class="btn btn-danger" (click)="deleteChaussure(chaussure.id)">Supprimer</a></td>
+      <td> <button class="btn btn-danger" (click)="deleteChaussure(chaussure.id)">Supprimer</button></td>
     </tr>
   </tbody>
 </table>
