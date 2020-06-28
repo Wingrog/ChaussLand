@@ -13,6 +13,8 @@ export class EditChaussureComponent implements OnInit {
 
   chaussure: Chaussure;
   typeChaussure = ['Sport', 'Ville', 'Football'];
+  isLoading: boolean;
+
 
 
   constructor(private activatedRoute: ActivatedRoute, private chaussureService: ChaussureService, private router: Router, private toastr: ToastrService) { }
@@ -25,7 +27,6 @@ export class EditChaussureComponent implements OnInit {
     });
   }
 
-  isLoading: boolean;
 
   // JE MODIFIE MA CHAUSSURE
 
