@@ -1,10 +1,11 @@
-<div *ngIf="!isloading">
-  <h1>Id de la chaussure : {{chaussure.id}}</h1>
-  <h2>Nom de la chaussure : {{chaussure.nom}}</h2>
-  <h2>Marque : {{chaussure.marque}}</h2>
-  <h2>Type : {{chaussure.type}}</h2>
-  <h2>Taille : {{chaussure.taille}}</h2>
-  <h2>Date d'entrée en stock {{chaussure.dateEntreStock}}</h2>
+<div class="detail" *ngIf="!isloading">
+  <h1>Plus d'information sur le produit ID {{chaussure.id}} :</h1><br>
+  <h4>Nom de la chaussure : {{chaussure.nom}}</h4>
+  <h4>Marque : {{chaussure.marque}}</h4>
+  <h4>Type : {{chaussure.type}}</h4>
+  <h4>Taille : {{chaussure.taille}}</h4>
+  <h4>Date d'entrée en stock : {{chaussure.dateEntreStock | date:'dd/MM/yyyy'}}</h4>
+  <a class="btn btn-success" routerLink="/home">Retour à la liste</a>
 </div>
 
 
