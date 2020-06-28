@@ -18,7 +18,7 @@ export class ChaussureComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //Methode GET Back End pour récupérer toutes les chaussures
+    // Methode GET Back End pour récupérer toutes les chaussures
 
     this.isLoading = true;
     this.chaussureService.getChaussures().subscribe((data: Chaussure[]) => {
@@ -33,6 +33,9 @@ export class ChaussureComponent implements OnInit {
     })
   }
 
+
+
+  // Fonction déclenchée au clic via le formulaire
 
   deleteChaussure(id: number): void {
     this.isLoading = true;

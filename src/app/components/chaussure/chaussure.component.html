@@ -24,8 +24,8 @@
       <td>{{chaussure.taille}}</td>
       <td>{{chaussure.dateEntreStock | date: 'dd/MM/yyyy'}}</td>
 
-      <td><a class="btn btn-warning" [routerLink]="['/chaussure', chaussure.id]">En savoir plus</a></td>
-      <td><a class="btn btn-primary" [routerLink]="['/chaussure/update', chaussure.id]">Editer</a></td>
+      <td><button class="btn btn-warning" [routerLink]="['/chaussure', chaussure.id]">En savoir plus</button></td>
+      <td><button class="btn btn-primary" [routerLink]="['/chaussure/update', chaussure.id]">Editer</button></td>
       <td> <button class="btn btn-danger" (click)="deleteChaussure(chaussure.id)">Supprimer</button></td>
     </tr>
   </tbody>
