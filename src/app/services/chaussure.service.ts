@@ -11,10 +11,10 @@ import { catchError, retry } from 'rxjs/internal/operators';
 export class ChaussureService {
 
 
-  // CONNEXION SERVEUR BACK END
-
   constructor(private http: HttpClient) {
   }
+
+  // CONNEXION SERVEUR BACK END
 
   apiURL = 'http://localhost:3000/chaussure';
   httpOptions = {
