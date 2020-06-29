@@ -48,6 +48,9 @@
       <div [hidden]="terrain.valid" class="alert alert-danger">
         Le type de chaussure est requis
       </div>
+
+      <!-- EN UTILISANT UN INPUT DATE -->
+
       <div>
         <label for="id">Renseigner une date d'entrée</label><br>
         <input type="date" name="dateEntree" id="dateEntree" required [(ngModel)]="chaussure.dateEntreStock"
