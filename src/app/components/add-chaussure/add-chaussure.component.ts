@@ -18,6 +18,7 @@ export class AddChaussureComponent implements OnInit {
 
   // LE SELECT POUR LE FORMULAIRE
   typeChaussure = ['Sport', 'Ville', 'Football'];
+  marques = ['Addidas', 'Nike', 'Puma'];
 
   isLoading: boolean;
 
