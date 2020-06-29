@@ -12,7 +12,11 @@ import { Chaussure } from 'src/app/models/chaussure';
 export class EditChaussureComponent implements OnInit {
 
   chaussure: Chaussure;
-  typeChaussure = ['Sport', 'Ville', 'Football'];
+
+
+  typeMarque = ['Adiddas', 'Nike', 'Puma']; // pour le input radio
+  typeChaussure = ['Sport', 'Ville', 'Football']; // pour le input select
+
   isLoading: boolean;
 
 
