@@ -11,11 +11,22 @@
     <!-- EN UTILISANT DES INPUTS RADIO -->
 
     <label for="marque">Renseigner une marque</label>
-
-    <div *ngFor="let marque of marques">
-      <input type="radio" id="marque" name="marque" [value]="marque" required [(ngModel)]="chaussure.marque"
+    <div>
+      <input type="radio" id="adidas" name="marque" value="Adidas" required [(ngModel)]="chaussure.marque"
         #marque="ngModel">
-      <label class="radioMarque" for="marque"> {{marque}}</label>
+      <label for="adidas">Adidas</label>
+    </div>
+
+    <div>
+      <input type="radio" id="nike" name="marque" value="Nike" required [(ngModel)]="chaussure.marque"
+        #marque="ngModel">
+      <label for="nike">Nike</label>
+    </div>
+
+    <div>
+      <input type="radio" id="puma" name="marque" value="Puma" required [(ngModel)]="chaussure.marque"
+        #marque="ngModel">
+      <label for="puma">Puma</label>
     </div>
 
     <!-- EN UTILISANT UN INPUT NUMBER -->

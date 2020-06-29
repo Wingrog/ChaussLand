@@ -17,8 +17,7 @@ export class AddChaussureComponent implements OnInit {
   chaussure = new Chaussure();
 
   // LE SELECT POUR LE FORMULAIRE
-  typeChaussure = ['Sport', 'Ville', 'Football'];
-  marques = ['Addidas', 'Nike', 'Puma'];
+  typeChaussure = ['Sport', 'Ville', 'Football']; //pour les inputs select
 
   isLoading: boolean;
 
