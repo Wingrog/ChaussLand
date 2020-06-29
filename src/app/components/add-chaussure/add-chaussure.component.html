@@ -1,5 +1,5 @@
 <div *ngIf="!isLoading">
-  <h1>Ajouter une planète</h1>
+  <h1>Ajouter une chaussure</h1>
 
   <form #chaussureForm="ngForm" (ngSubmit)="submitChaussure()">
 
@@ -9,24 +9,11 @@
     <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="chaussure.nom" #nom="ngModel">
 
     <!-- EN UTILISANT DES INPUTS RADIO -->
-
-    <label for="marque">Renseigner une marque</label>
-    <div>
-      <input type="radio" id="adidas" name="marque" value="Adidas" required [(ngModel)]="chaussure.marque"
+    <label for="nom">Renseigner une marque</label>
+    <div *ngFor="let marque of typeMarque">
+      <input type="radio" id="marque" name="marque" [value]="marque" required [(ngModel)]="chaussure.marque"
         #marque="ngModel">
-      <label for="adidas">Adidas</label>
-    </div>
-
-    <div>
-      <input type="radio" id="nike" name="marque" value="Nike" required [(ngModel)]="chaussure.marque"
-        #marque="ngModel">
-      <label for="nike">Nike</label>
-    </div>
-
-    <div>
-      <input type="radio" id="puma" name="marque" value="Puma" required [(ngModel)]="chaussure.marque"
-        #marque="ngModel">
-      <label for="puma">Puma</label>
+      <label class="radioMarque" for="marque"> {{marque}}</label>
     </div>
 
     <!-- EN UTILISANT UN INPUT NUMBER -->
