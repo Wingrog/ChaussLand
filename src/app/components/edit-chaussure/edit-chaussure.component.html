@@ -27,12 +27,12 @@
 
     <div>
       <label for="type">Type de chaussure</label>
-      <select class="form-control" id="type" required [(ngModel)]="chaussure.type" name="type" #terrain="ngModel">
+      <select class="form-control" id="type" required [(ngModel)]="chaussure.type" name="type" #type="ngModel">
         <option *ngFor="let item of typeChaussure" [value]="item">{{item}}</option>
       </select>
 
       <!-- ON AFFICHE UNE DIV POUR DIRE QUE LE CHOIX EST OBLIGATOIRE -->
-      <div [hidden]="terrain.valid" class="alert alert-danger">
+      <div [hidden]="type.valid" class="alert alert-danger">
         Le type de chaussure est requis
       </div>
 
