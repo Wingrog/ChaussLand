@@ -17,14 +17,6 @@
       "dateEntreStock": "2020-06-12"
     },
     {
-      "id": 3,
-      "nom": "popo",
-      "marque": "nike",
-      "type": "Ville",
-      "taille": 30,
-      "dateEntreStock": "2020-06-17"
-    },
-    {
       "id": 4,
       "nom": "Nike force",
       "marque": "nike",
