@@ -1,11 +1,14 @@
 <div *ngIf="!isLoading">
-  <h1>Ajouter une chaussure</h1>
+  <h1>Modifier une chaussure</h1>
 
   <form #chaussureForm="ngForm" (ngSubmit)="editChaussure()">
+
+    <!-- EN UTILISANT UN INPUT TEXT -->
 
     <label for="nom">Renseigner le nom de la chaussure</label>
     <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="chaussure.nom" #nom="ngModel">
 
+    <!-- EN UTILISANT DES INPUTS RADIO -->
     <label for="nom">Renseigner une marque</label>
     <div *ngFor="let marque of typeMarque">
       <input type="radio" id="marque" name="marque" [value]="marque" required [(ngModel)]="chaussure.marque"
@@ -13,19 +16,28 @@
       <label class="radioMarque" for="marque"> {{marque}}</label>
     </div>
 
+    <!-- EN UTILISANT UN INPUT NUMBER -->
 
     <label for="nom">Renseigner une taille</label>
     <input type="number" class="form-control" name="taille" id="taille" required [(ngModel)]="chaussure.taille"
       #taille="ngModel">
+
+
+    <!-- EN UTILISANT UN SELECT -->
 
     <div>
       <label for="type">Type de chaussure</label>
       <select class="form-control" id="type" required [(ngModel)]="chaussure.type" name="type" #terrain="ngModel">
         <option *ngFor="let item of typeChaussure" [value]="item">{{item}}</option>
       </select>
+
+      <!-- ON AFFICHE UNE DIV POUR DIRE QUE LE CHOIX EST OBLIGATOIRE -->
       <div [hidden]="terrain.valid" class="alert alert-danger">
         Le type de chaussure est requis
       </div>
+
+      <!-- EN UTILISANT UN INPUT DATE -->
+
       <div>
         <label for="id">Renseigner une date d'entrée</label><br>
         <input type="date" name="dateEntree" id="dateEntree" required [(ngModel)]="chaussure.dateEntreStock"

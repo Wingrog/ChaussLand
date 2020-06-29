@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nom": "f50",
-      "marque": "adidas",
+      "marque": "Adiddas",
       "type": "Football",
       "taille": 43,
       "dateEntreStock": "2020-06-02"
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "nom": "test",
-      "marque": "nike",
+      "marque": "Puma",
       "type": "Sport",
       "taille": 44,
       "dateEntreStock": "2020-06-12"
@@ -19,10 +19,18 @@
     {
       "id": 4,
       "nom": "Nike force",
-      "marque": "nike",
+      "marque": "Nike",
       "type": "Ville",
       "taille": 36,
       "dateEntreStock": "2020-05-06"
+    },
+    {
+      "id": 5,
+      "nom": "Totyo",
+      "marque": "Adiddas",
+      "type": "Sport",
+      "taille": 43,
+      "dateEntreStock": "2020-06-02"
     }
   ]
 }
