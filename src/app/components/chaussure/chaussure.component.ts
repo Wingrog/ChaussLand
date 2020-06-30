@@ -26,11 +26,8 @@ export class ChaussureComponent implements OnInit {
       this.isLoading = false;
     });
 
-    console.log("Ici je demande mes données");
-    this.chaussureService.getChaussures().subscribe(data => {
-      this.chaussures = data;
-      console.log("C'est ok, je récupère les données !");
-    })
+
+
   }
 
 
