@@ -9,7 +9,7 @@
     <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="chaussure.nom" #nom="ngModel">
 
     <!-- EN UTILISANT DES INPUTS RADIO -->
-    <label for="nom">Renseigner une marque</label>
+    <label for="marque">Renseigner une marque</label>
     <div *ngFor="let marque of typeMarque">
       <input type="radio" id="marque" name="marque" [value]="marque" required [(ngModel)]="chaussure.marque"
         #marque="ngModel">
@@ -18,7 +18,7 @@
 
     <!-- EN UTILISANT UN INPUT NUMBER -->
 
-    <label for="nom">Renseigner une taille</label>
+    <label for="taille">Renseigner une taille</label>
     <input type="number" class="form-control" name="taille" id="taille" required [(ngModel)]="chaussure.taille"
       #taille="ngModel">
 
@@ -31,19 +31,19 @@
         <option *ngFor="let item of typeChaussure" [value]="item">{{item}}</option>
       </select>
 
-      <!-- ON AFFICHE UNE DIV POUR DIRE QUE LE CHOIX EST OBLIGATOIRE -->
-      <div [hidden]="type.valid" class="alert alert-danger">
-        Le type de chaussure est requis
-      </div>
-
       <!-- EN UTILISANT UN INPUT DATE -->
 
       <div>
-        <label for="id">Renseigner une date d'entrée</label><br>
+        <label for="dateEntree">Renseigner une date d'entrée</label><br>
         <input type="date" name="dateEntree" id="dateEntree" required [(ngModel)]="chaussure.dateEntreStock"
-          #dateEntreStock="ngModel">
+          #dateEntree="ngModel">
       </div><br>
       <div>
+        <!-- ON AFFICHE UNE DIV POUR DIRE QUE TOUS LES CHOIX SONT OBLIGATOIRES -->
+        <div [hidden]="chaussureForm.valid" class="alert alert-danger">
+          Tous les champs sont obligatoire
+        </div>
+
         <input [disabled]="!chaussureForm.valid" type="submit" value="Envoyer">
       </div>
     </div>
